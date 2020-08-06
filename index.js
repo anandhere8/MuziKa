@@ -6,7 +6,7 @@ const search  = require('youtube-search');
 require("dotenv").config();
 const token = "" + process.env.TOKEN + "";
 const API_KEY = "" + process.env.API_KEY + "";
-const prefix = auth[0].prefix;
+const prefix = "" + process.env.prefix + "";
 const client = new Discord.Client();
 const help = require("./help")
 const queue = new Map();
