@@ -10,7 +10,7 @@ const prefix = "" + process.env.prefix + "";
 const client = new Discord.Client();
 const help = require("./help")
 const queue = new Map();
-
+const BotName = process.env.BotName;
 const opts = {
   maxResults : 20,
   key : API_KEY,
@@ -52,11 +52,11 @@ client.on("message", async message => {
     stop(message, serverQueue);
     return;
   }
-  else if (msg === "!gimme") {
+  else if (msg === `${prefix}gimme`) {
     let embed = new Discord.MessageEmbed()
             .setColor("#73ffdc")
             .setDescription(`Hi, ${message.author} enter keyword to search`)
-            .setTitle('MūziKa');
+            .setTitle(`${BotName}`);
             
         let embedMsg = await message.channel.send(embed);
         let filter = m => m.author.id === message.author.id;
